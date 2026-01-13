@@ -1,212 +1,175 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* styles.css */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root{
+  --bg: #f3f4f6;
+  --panel: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
+  --focus: #2563eb;
 }
 
-:root {
-    --primary-color: #000000;
-    --primary-dark: #000000;
-    --text-color: #000000;
-    --text-light: #333;
-    --background: #d6b39d;
-    --white: #fefefe;
-    --border: #ddd;
-    --success: #28a745;
-    --warning: #ffc107;
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.55;
 }
 
-body {
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background);
-    font-family: serif;
+.container{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Top bar (sticky search like dictionary sites) */
+.topbar{
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-/* Hero Section */
-.hero {
-    background: var(--background);
-    color: var(--text-color);
-    padding: 60px 20px 80px;
-    text-align: center;
-    border-bottom: 2px solid var(--text-color);
+.topbar-inner{
+  padding: 14px 0;
+  display: grid;
+  gap: 12px;
 }
 
-.hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: -0.5px;
+.brand-title{
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
 }
 
-.hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+.brand-subtitle{
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
-/* Search Container */
-.search-container {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
+/* Search */
+.search-container{
+  position: relative;
+  max-width: 720px;
 }
 
-.search-input {
-    width: 100%;
-    padding: 18px 50px 18px 24px;
-    font-size: 1.1rem;
-    border: 1px solid var(--text-color);
-    background: var(--white);
-    color: var(--text-color);
+.search-input{
+  width: 100%;
+  padding: 14px 44px 14px 14px;
+  font-size: 1rem;
+  border: 1px solid var(--border-strong);
+  background: #fff;
+  border-radius: 8px;
+  outline: none;
 }
 
-.clear-btn {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: var(--text-light);
-    cursor: pointer;
-    padding: 0;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: none;
-    align-items: center;
-    justify-content: center;
+.search-input:focus{
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
-.clear-btn:hover {
-    background-color: var(--border);
-    color: var(--text-color);
+.clear-btn{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--muted);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
 
-.clear-btn.visible {
-    display: flex;
+.clear-btn:hover{
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* Main Content */
-main {
-    padding: 40px 20px;
-    min-height: 50vh;
+.clear-btn.visible{
+  display: flex;
 }
 
-/* Results */
-.results {
-    background: var(--white);
-    padding: 30px;
-    border: 1px solid var(--border);
+/* Main / results panel */
+main{
+  padding: 18px 0 40px;
 }
 
-.welcome-message {
-    text-align: center;
-    color: var(--text-light);
+.results{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.welcome-message h2 {
-    color: var(--text-color);
-    margin-bottom: 10px;
+/* Welcome / empty states */
+.welcome-message,
+.no-results{
+  padding: 18px 18px;
+  color: var(--muted);
 }
 
-.no-results {
-    text-align: center;
-    color: var(--text-light);
-    padding: 20px;
+.welcome-message h2,
+.no-results h3{
+  color: var(--text);
+  margin-bottom: 6px;
+  font-size: 1.05rem;
 }
 
-.no-results h3 {
-    color: var(--text-color);
-    margin-bottom: 10px;
+/* Dictionary entry */
+.entry{
+  padding: 16px 18px;
+  border-top: 1px solid var(--border);
 }
 
-/* Dictionary Entry */
-.entry {
-    border-bottom: 1px solid var(--border);
-    padding: 20px 0;
+.entry:first-child{
+  border-top: none;
 }
 
-.entry:last-child {
-    border-bottom: none;
+.entry-word{
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
 }
 
-.entry-word {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 12px;
+.entry-translation{
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-.entry-translation {
-    font-size: 1.3rem;
-    line-height: 1.7;
-    margin-bottom: 10px;
-    color: var(--text-color);
-    font-weight: 600;
+.entry-synonyms{
+  font-size: 0.95rem;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
-.entry-synonyms {
-    font-size: 1rem;
-    color: var(--text-light);
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: var(--background);
-    border: 1px solid var(--border);
+.entry-synonyms strong{
+  color: var(--text);
+  font-weight: 700;
 }
 
-.entry-synonyms strong {
-    color: var(--text-color);
+/* Footer understated */
+.footer{
+  color: var(--muted);
+  text-align: center;
+  padding: 30px 16px;
 }
 
-/* Footer */
-.footer {
-    background-color: var(--background);
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
-    color: var(--text-light);
-    border-top: 1px solid var(--text-color);
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-
-    .search-input {
-        font-size: 1rem;
-        padding: 15px 45px 15px 20px;
-    }
-
-    .entry-word {
-        font-size: 1.5rem;
-    }
-
-    .results {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 40px 20px 60px;
-    }
-
-    .hero-title {
-        font-size: 1.75rem;
-    }
-}
+/* Mobile */
+@media (max-width: 640px){
+  .brand-title{ font-size: 1.05rem; }
+  .brand-subtitle{ font-size: 0.9rem; }
+  .search-container{ max-width: 10
