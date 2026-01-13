@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4a90e2;
+    --primary-dark: #357abd;
+    --text-color: #333;
+    --text-light: #666;
+    --background: #f5f7fa;
+    --white: #ffffff;
+    --border: #e1e8ed;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --success: #28a745;
+    --warning: #ffc107;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 60px 20px 80px;
+    text-align: center;
+    box-shadow: 0 4px 6px var(--shadow);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+/* Search Container */
+.search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 18px 50px 18px 24px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.clear-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+    background-color: var(--border);
+    color: var(--text-color);
+}
+
+.clear-btn.visible {
+    display: flex;
+}
+
+/* Main Content */
+main {
+    padding: 40px 20px;
+    min-height: 50vh;
+}
+
+/* Results */
+.results {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.welcome-message {
+    text-align: center;
+    color: var(--text-light);
+}
+
+.welcome-message h2 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.no-results {
+    text-align: center;
+    color: var(--text-light);
+    padding: 20px;
+}
+
+.no-results h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+/* Dictionary Entry */
+.entry {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    animation: fadeIn 0.3s ease;
+}
+
+.entry:last-child {
+    border-bottom: none;
+}
+
+.entry-word {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.entry-translation {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.entry-synonyms {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: var(--background);
+    border-radius: 8px;
+}
+
+.entry-synonyms strong {
+    color: var(--text-color);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--white);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .search-input {
+        font-size: 1rem;
+        padding: 15px 45px 15px 20px;
+    }
+
+    .entry-word {
+        font-size: 1.5rem;
+    }
+
+    .results {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 20px 60px;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+}
