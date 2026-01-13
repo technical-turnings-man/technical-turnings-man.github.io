@@ -15,5 +15,30 @@ const dictionaryData = [
         word: "Amazon Web Services",
         translation: "Amazonin Verkkopalvelut",
         synonyms: ["Amazonian Verkkopalvelut", "Amazonin Nettipalvelut"]
+    },
+    {
+        word: "AWS",
+        translation: "Amazonin Verkkopalvelut",
+        synonyms: ["Amazonian Verkkopalvelut", "Amazonin Nettipalvelut"]
+    },
+    {
+        word: "Oppiipahan",
+        translation: "Learns Evil",
+        synonyms: []
+    },
+    {
+        word: "Elastic Container Service",
+        translation: "Joustava Konttipalvelu",
+        synonyms: []
+    },
+    {
+        word: "Branch",
+        translation: "Oksa",
+        synonyms: ["Haara"]
+    },
+    {
+        word: "Pull Request",
+        translation: "Vetopyyntö",
+        synonyms: []
     }
 ];
