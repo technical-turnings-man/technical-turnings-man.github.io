@@ -40,5 +40,10 @@ const dictionaryData = [
         word: "Pull Request",
         translation: "Vetopyyntö",
         synonyms: []
+    },
+    {
+        word: "Policy",
+        translation: "Käytäntö",
+        synonyms: ["Sääntö"]
     }
 ];
