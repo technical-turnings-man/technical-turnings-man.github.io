@@ -24,7 +24,7 @@ body{
   padding: 0 16px;
 }
 
-/* Top bar (sticky search like dictionary sites) */
+/* Top bar */
 .topbar{
   background: var(--panel);
   border-bottom: 1px solid var(--border);
@@ -98,7 +98,7 @@ body{
   display: flex;
 }
 
-/* Main / results panel */
+/* Main / results */
 main{
   padding: 18px 0 40px;
 }
@@ -124,7 +124,7 @@ main{
   font-size: 1.05rem;
 }
 
-/* Dictionary entry */
+/* Entries */
 .entry{
   padding: 16px 18px;
   border-top: 1px solid var(--border);
@@ -134,6 +134,7 @@ main{
   border-top: none;
 }
 
+/* Works whether entry-word is h2 or div */
 .entry-word{
   font-size: 1.35rem;
   font-weight: 800;
@@ -146,14 +147,12 @@ main{
   font-size: 1.05rem;
   font-weight: 600;
   margin-bottom: 10px;
+  color: var(--text);
 }
 
 .entry-synonyms{
   font-size: 0.95rem;
   color: var(--muted);
-  background: transparent;
-  border: none;
-  padding: 0;
 }
 
 .entry-synonyms strong{
@@ -161,7 +160,7 @@ main{
   font-weight: 700;
 }
 
-/* Footer understated */
+/* Footer */
 .footer{
   color: var(--muted);
   text-align: center;
@@ -172,4 +171,5 @@ main{
 @media (max-width: 640px){
   .brand-title{ font-size: 1.05rem; }
   .brand-subtitle{ font-size: 0.9rem; }
-  .search-container{ max-width: 10
+  .search-container{ max-width: 100%; }
+}
