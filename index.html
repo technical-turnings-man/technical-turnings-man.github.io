@@ -1,46 +1,50 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dictionary</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English–Finnish Technical Dictionary</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header class="hero">
-        <div class="container">
-            <h1 class="hero-title">English-Finnish Technical Dictionary</h1>
-            <p class="hero-subtitle">Englanti-Suomi Tekninen Sanakirja</p>
-            <div class="search-container">
-                <input 
-                    type="text" 
-                    id="searchInput" 
-                    class="search-input" 
-                    placeholder="Search for word to turn / Etsi käännettävää sanaa"
-                    autocomplete="off"
-                >
-                <button id="clearBtn" class="clear-btn" aria-label="Clear search">×</button>
-            </div>
-        </div>
-    </header>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-title">English–Finnish Technical Dictionary</div>
+        <div class="brand-subtitle">Englanti–Suomi Tekninen Sanakirja</div>
+      </div>
 
-    <main class="container">
-        <div id="results" class="results">
-            <div class="welcome-message">
-                <h2>Tervetuloa! / Welcome!</h2>
-                <p>Start typing to search for translations.</p>
-                <p>Aloita kirjoittamalla etsiäksesi käännöksiä.</p>
-            </div>
-        </div>
-    </main>
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search for word to turn / Etsi käännettävää sanaa"
+          autocomplete="off"
+        />
+        <button id="clearBtn" class="clear-btn" aria-label="Clear search">×</button>
+      </div>
+    </div>
+  </header>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 JJ&TA. Tee mitä lystäät, Do whatever you want.</p>
-        </div>
-    </footer>
+  <main class="container">
+    <div id="results" class="results">
+      <div class="welcome-message">
+        <h2>Tervetuloa! / Welcome!</h2>
+        <p>Start typing to search for translations.</p>
+        <p>Aloita kirjoittamalla etsiäksesi käännöksiä.</p>
+      </div>
+    </div>
+  </main>
 
-    <script src="dictionary-data.js"></script>
-    <script src="app.js"></script>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 JJ&TA. Tee mitä lystäät, Do whatever you want.</p>
+    </div>
+  </footer>
+
+  <script src="dictionary-data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
